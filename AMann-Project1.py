@@ -1,9 +1,9 @@
 # ————— STEP 1: ADDING AN EXPENSE —————
 
 # Line 4 is where all expenses will be stored.
+import csv
 expenses = []
 budget = 0
-import csv
 
 # Defining the function which can be used each time a new expense is added.
 def add_expense():
@@ -82,7 +82,7 @@ def load_expenses():
             expense = {
                 "date" : row[0],
                 "category" : row[1],
-                "amount" : row[2],
+                "amount" : float(row[2]),
                 "description" : row[3],
             }
             expenses.append(expense)
@@ -90,4 +90,43 @@ def load_expenses():
 """ STEP 4 COMPLETE: LOADING FROM A CSV
 Here, we set 2 functions. The first grabs expenses from the stored expenses in the expenses list above. Python then writes them to a new CSV. In the end, there would be a new CSV that Python makes that's in that folder. The second function rebuilds the expenses from that same CSV back to the expenses list as it's defined above. """
 
-Step 5 for tomorrow
+
+
+# ————— STEP 5: INTERACTIVE MENU —————
+
+# Function for creating the interactive menu with a loop inside.
+def main_menu():
+        
+    while True:
+        print("1. Add expense")
+        print("2. View expense")
+        print("3. Set budget")
+        print("4. Track budget")
+        print("5. Save expenses")
+        print("6. Exit")
+
+        selection = input("Enter your selection: ")
+       
+        if selection == "1":
+            add_expense()
+        elif selection == "2":
+            view_expenses()
+        elif selection == "3":
+            set_budget()
+        elif selection == "4":
+            track_budget()
+        elif selection == "5":
+            save_expenses()
+        else:
+            print("Done")
+            break
+
+try:
+    load_expenses()
+except FileNotFoundError:
+    print("No saved expenses found. Select option 1 to add your first expense!")
+
+main_menu()
+
+""" STEP 5 COMPLETE: INTERACTIVE MENU
+Here, we set the function for the interactive menu. Before calling the function, we attempt to load any previously saved expenses from the CSV file. In the menu, the user can select a number of options to execute certain actions. We've added an additional option to set the budget so there's a budget to track. """
