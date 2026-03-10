@@ -7,10 +7,10 @@ budget = 0
 
 # Defining the function which can be used each time a new expense is added.
 def add_expense():
-    date = input("Enter the expense date in YYYY-MM-DD format.")
-    category = input("Enter the category. Ex: Food or Travel")
-    amount = float(input("Enter the expense amount."))
-    description = input("Enter the expense purpose.")
+    date = input("Enter the expense date in YYYY-MM-DD format: ")
+    category = input("Enter the category. Ex: Food or Travel: ")
+    amount = float(input("Enter the expense amount: "))
+    description = input("Enter the expense purpose: ")
     
     # Creating the dictionary which pulls from the variables in the function.
     expense = {
