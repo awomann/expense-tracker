@@ -121,6 +121,7 @@ def main_menu():
             print("Done")
             break
 
+# Trying to fetch some expenses from a CSV first before calling the menu function.
 try:
     load_expenses()
 except FileNotFoundError:
