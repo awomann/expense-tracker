@@ -1,6 +1,6 @@
 # ————— STEP 1: ADDING AN EXPENSE —————
 
-# Line 4 is where all expenses will be stored.
+# expenses = [] is where all expenses will be stored.
 import csv
 expenses = []
 budget = 0
@@ -89,7 +89,6 @@ def load_expenses():
 
 """ STEP 4 COMPLETE: LOADING FROM A CSV
 Here, we set 2 functions. The first grabs expenses from the stored expenses in the expenses list above. Python then writes them to a new CSV. In the end, there would be a new CSV that Python makes that's in that folder. The second function rebuilds the expenses from that same CSV back to the expenses list as it's defined above. """
-
 
 
 # ————— STEP 5: INTERACTIVE MENU —————
